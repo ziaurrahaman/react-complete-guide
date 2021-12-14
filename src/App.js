@@ -24,9 +24,27 @@ const App = () => {
     },
   ];
 
+  const addExpenceHandler = (expense) => {
+    expenses.push(expense);
+    console.log(expenses);
+  };
+
+  // const a = [{ one: 1 }, { two: 2 }, { three: 3 }, { four: 4 }];
+  // const b = JSON.parse(JSON.stringify(a));
+  // b[0].one = 101;
+  // console.log(a);
+  // console.log(b);
+  // const b = [...a];
+  // b[1].b = 7;
+  // console.log(a);
+  // console.log(b);
+  // let exp = [...expenses];
+  // exp[0].id = "test";
+  // console.log(expenses);
+  // console.log(exp);
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenceHandler} />
       <Expenses items={expenses} />
     </div>
   );
